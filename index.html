@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPS Tracking</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function trackPackage() {
+            var trackingNumber = document.getElementById("trackingNumber").value;
+            var errorMessage = document.getElementById("errorMessage");
+            if (trackingNumber === "67904754JP") {
+                document.getElementById("trackingForm").classList.add("hidden");
+                document.getElementById("trackingResult").classList.remove("hidden");
+                errorMessage.innerText = "";
+            } else {
+                errorMessage.innerText = "Tracking number not found. Please try again.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div style="display: flex; align-items: center;">
+            <img src="download.jpg" alt="UPS Logo"> <span>UPS Tracking</span>
+        </div>
+        <div class="right-section">
+            <span>Locations</span>
+            <span>United States - English</span>
+            <span>Sign up / Log in</span>
+            <span>Search or Track</span>
+        </div>
+    </div>
+
+    <div class="container" id="trackingForm">
+        <div class="tracking-box">
+            <h2>Tracking</h2>
+            <p>Enter your tracking number below:</p>
+            <input type="text" id="trackingNumber" class="tracking-input" placeholder="Enter tracking number">
+            <button class="btn" onclick="trackPackage()">Track</button>
+            <p id="errorMessage" class="error"></p>
+        </div>
+    </div>
+
+    <div class="container hidden" id="trackingResult">
+        <h2>ON HOLD</h2>
+        <div class="status-line">
+            <span>ON HOLD</span>
+            <span>&#10004;</span>
+        </div>
+        <div class="tracking-result-container">
+            <div class="tracking-details">
+                <p><strong>Schedule Delivery:</strong> Wednesday, 26/03/2025</p>
+                <p><strong>Delivery Time:</strong> 4:42 P.M.</p>
+                <p><strong>Hold by:</strong> Local Police</p>
+                <p><strong>Sender's Name:</strong> Mary Henderson</p>
+                <p><strong> Receiver's Address:</strong> 3619 Diane Street
+                    Los Angeles, CA 90017</p>
+                <p><strong> Receiver's Name:</strong> Christina J. Best</p>
+            </div>
+            <div class="tracking-status">
+                <p><strong>Status:</strong> On hold</p>
+                <p><strong>Proof of Delivery:</strong> Available</p>
+                <p><a href="#">View Proof</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
